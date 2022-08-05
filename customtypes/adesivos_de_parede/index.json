@@ -1,0 +1,63 @@
+{
+  "id": "adesivos_de_parede",
+  "label": "Adesivos de parede",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Slug",
+          "placeholder": "Não alterar esse campo!"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": "Titulo"
+        }
+      },
+      "author": {
+        "type": "Text",
+        "config": {
+          "label": "Author",
+          "placeholder": "Autor"
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "content": {
+        "type": "Group",
+        "config": {
+          "label": "Content",
+          "fields": {
+            "heading": {
+              "type": "Text",
+              "config": {
+                "label": "Heading",
+                "placeholder": "Cabeçalho"
+              }
+            },
+            "body": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Body",
+                "placeholder": "Descrição",
+                "allowTargetBlank": true,
+                "single": "preformatted,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl,paragraph,heading3"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "adesivos_de_parede": {
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    }
+  }
+}
