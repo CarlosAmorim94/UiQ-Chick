@@ -34,6 +34,13 @@
           "thumbnails": []
         }
       },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "Price",
+          "placeholder": "Preço"
+        }
+      },
       "content": {
         "type": "Group",
         "config": {

@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "collect",
-    "author": "deeply",
+    "title": "feathers",
+    "author": "melted",
     "banner": {
       "dimensions": {
         "width": 900,
@@ -20,15 +20,16 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+      "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
     },
+    "price": 2,
     "content": [
       {
-        "heading": "anyone",
+        "heading": "gift",
         "body": [
           {
             "type": "paragraph",
-            "text": "Ut aute aliquip Lorem. Minim sunt labore cillum officia mollit ex ullamco velit non sint exercitation in.",
+            "text": "Aliqua in dolore adipisicing in deserunt cupidatat dolore nisi enim. Ex voluptate occaecat esse dolore commodo consectetur incididunt occaecat pariatur veniam qui eu dolore anim magna. Sunt ex culpa duis exercitation duis do amet minim laborum elit occaecat Lorem sint.",
             "spans": []
           }
         ]

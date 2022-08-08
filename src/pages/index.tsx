@@ -11,7 +11,6 @@ interface Post {
 }
 
 interface PostPagination {
-  next_page: string;
   results: Post[];
 }
 
