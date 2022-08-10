@@ -1,6 +1,6 @@
 {
-  "id": "adesivos_de_parede",
-  "label": "Adesivos de parede",
+  "id": "quadros_adesivados",
+  "label": "Quadros adesivados",
   "repeatable": true,
   "status": true,
   "json": {

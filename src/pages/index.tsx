@@ -16,13 +16,19 @@ interface PostPagination {
 
 interface HomeProps {
   postsPagination: PostPagination;
+  postsPagination2: PostPagination;
 }
 
-export default function Home({ postsPagination }: HomeProps) {
+export default function Home({ postsPagination, postsPagination2 }: HomeProps) {
   return (
-    <h1>{postsPagination.results.map((item) => (
-      <div key={item.uid}>{item.data.title}</div>
-    ))}</h1>
+    <>
+      <ul>{postsPagination?.results.map((item) => (
+        <li key={item.uid}>{item.data.title}</li>
+      ))}</ul>
+      <ul>{postsPagination2?.results.map((item) => (
+        <li key={item.uid}>{item.data.title}</li>
+      ))}</ul>
+    </>
   )
 }
 
@@ -39,9 +45,22 @@ export const getStaticProps: GetStaticProps = async () => {
     results: postsResponse.results,
   };
 
+  const postsResponse2 = await prismic.getByType(process.env.PRISMIC_API_CATEGORY_2 as string, {
+    orderings: {
+      field: 'last_publication_date',
+      direction: 'desc',
+    },
+  });
+
+  const postsPagination2 = {
+    results: postsResponse2.results,
+  };
+
+
   return {
     props: {
       postsPagination,
+      postsPagination2
     },
   };
 }

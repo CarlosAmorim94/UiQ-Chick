@@ -8,6 +8,52 @@
             "blocks": 1
           }
         }
+      },
+      "banner": {
+        "content": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+      }
+    },
+    "quadros_adesivados": {
+      "banner": {
+        "content": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+      },
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
+    "quadros_sublimados": {
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
+    "embalagens_criativas": {
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
+    "presentes_criativos": {
+      "content": {
+        "body": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
       }
     }
   }

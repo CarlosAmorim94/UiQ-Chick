@@ -1,6 +1,6 @@
 {
-  "id": "adesivos_de_parede",
-  "label": "Adesivos de parede",
+  "id": "quadros_sublimados",
+  "label": "Quadros em tecido sublimado",
   "repeatable": true,
   "status": true,
   "json": {
@@ -16,7 +16,7 @@
         "type": "Text",
         "config": {
           "label": "Title",
-          "placeholder": "Titulo"
+          "placeholder": "Autor"
         }
       },
       "author": {

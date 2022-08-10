@@ -1,7 +1,7 @@
 {
   "id": "mock-doc-id",
   "url": null,
-  "type": "adesivos_de_parede",
+  "type": "quadros_sublimados",
   "href": null,
   "tags": [],
   "first_publication_date": "1970-01-01T00:00:01+0000",
@@ -11,8 +11,8 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "avoid",
-    "author": "made",
+    "title": "body",
+    "author": "sat",
     "banner": {
       "dimensions": {
         "width": 900,
@@ -20,16 +20,16 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85"
+      "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
     },
-    "price": 75,
+    "price": 7,
     "content": [
       {
-        "heading": "again",
+        "heading": "hollow",
         "body": [
           {
             "type": "paragraph",
-            "text": "Nostrud est laborum tempor minim quis laborum velit duis.",
+            "text": "Fugiat exercitation laborum do ad quis irure sint ipsum aliqua sint nostrud voluptate incididunt veniam incididunt. Aute non tempor minim magna consequat laboris.",
             "spans": []
           }
         ]
