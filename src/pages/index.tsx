@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import type { GetStaticProps } from 'next'
 import { getPrismicClient } from '../services/prismic';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/css/bundle";
 import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Keyboard, Pagination, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 interface Slide {
   uid?: string;
@@ -32,29 +32,18 @@ export default function Home({ sliderResults }: HomeProps) {
   return (
     <>
 
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-        {/*  {
-          sliderResults?.results.map((item) => (
-            <SwiperSlide>
-              <img src={item.data.banner.url} alt={item.data.banner.alt} />
-            </SwiperSlide>
-          ))
-        } */}
-
-      </Swiper>
-
-      {/*  <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-
+      <Swiper
+        slidesPerView={1}
+        keyboard={{
+          enabled: true,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Keyboard, Pagination, Navigation]}
+        className="mySwiper"
+      >
         {
           sliderResults?.results.map((item) => (
             <SwiperSlide>
@@ -62,8 +51,7 @@ export default function Home({ sliderResults }: HomeProps) {
             </SwiperSlide>
           ))
         }
-
-      </Swiper> */}
+      </Swiper>
 
 
     </>
