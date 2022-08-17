@@ -1,39 +1,35 @@
 import React, { useRef, useState } from "react";
+import Image from "next/image";
+
+import { Slider } from "../types/slides/slides";
 import type { GetStaticProps } from 'next'
+
 import { getPrismicClient } from '../services/prismic';
 
+import { Keyboard, Pagination, Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Keyboard, Pagination, Navigation } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-interface Slide {
-  uid?: string;
-  first_publication_date: string | null;
-  data: {
-    title: string;
-    banner: {
-      alt: string;
-      url: string;
-    }
-  };
-}
 
-interface Slider {
-  results: Slide[];
-}
 
-interface HomeProps {
+interface SliderProps {
   sliderResults: Slider;
 }
 
-export default function Home({ sliderResults }: HomeProps) {
+export default function Home({ sliderResults }: SliderProps) {
   return (
     <>
 
       <Swiper
+        rewind={true}
         slidesPerView={1}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
         keyboard={{
           enabled: true,
         }}
@@ -41,18 +37,18 @@ export default function Home({ sliderResults }: HomeProps) {
           clickable: true,
         }}
         navigation={true}
-        modules={[Keyboard, Pagination, Navigation]}
+        modules={[Autoplay, Keyboard, Pagination, Navigation]}
         className="mySwiper"
+
       >
         {
           sliderResults?.results.map((item) => (
-            <SwiperSlide>
-              <img src={item.data.banner.url} alt={item.data.banner.alt} />
+            <SwiperSlide key={item.data.banner.url}>
+              <Image priority layout="responsive" width={1900} height={500} src={item.data.banner.url} alt={item.data.banner.alt} />
             </SwiperSlide>
           ))
         }
       </Swiper>
-
 
     </>
 

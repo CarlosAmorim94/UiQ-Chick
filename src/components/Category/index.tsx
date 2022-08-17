@@ -2,7 +2,7 @@ import Link from "next/link"
 import { IconBaseProps } from "react-icons/lib"
 import { Container, Icon, Name } from "./styles"
 
-type Props = {
+type Props = IntrinsicAttributes & {
   name: string,
   icon: IconBaseProps
 }
