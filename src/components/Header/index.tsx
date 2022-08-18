@@ -54,7 +54,11 @@ export const Header = ({ toggleTheme }: Props) => {
         </Info>
 
         <Categories>
-          <Category name="Adesivos de parede" icon={<GiBrickWall />} />
+          <Category
+            name="Adesivos de parede"
+            icon={<GiBrickWall />}
+            url='adesivos_de_parede'
+          />
           <Category name="Quadros adesivados" icon={<MdStickyNote2 />} />
           <Category name="Quadros em tecido sublimado" icon={<GiRolledCloth />} />
           <Category name="Embalagens criativas" icon={<GiBoxUnpacking />} />
