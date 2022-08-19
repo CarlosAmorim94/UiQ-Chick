@@ -36,7 +36,7 @@ export default function Slug({ post }: CardProps) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient({});
   const posts = await prismic.getByType(
-    process.env.PRISMIC_API_CATEGORY_1 as string
+    process.env.PRISMIC_API_CATEGORY_3 as string
   );
 
   const paths = posts.results.map((post) => {
@@ -58,7 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const prismic = getPrismicClient({});
   const response = await prismic.getByUID(
-    process.env.PRISMIC_API_CATEGORY_1 as string,
+    process.env.PRISMIC_API_CATEGORY_3 as string,
     String(slug)
   );
 

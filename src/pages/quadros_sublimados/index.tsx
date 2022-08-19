@@ -53,7 +53,7 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient({});
   const postsResponse = await prismic.getByType(
-    process.env.PRISMIC_API_CATEGORY_1 as string,
+    process.env.PRISMIC_API_CATEGORY_3 as string,
     {
       pageSize: 20,
       orderings: {
