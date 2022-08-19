@@ -9,6 +9,12 @@ export interface Post {
       url?: string;
       alt: string;
     };
+    content?: {
+      heading: string;
+      body: {
+        text: string;
+      }[];
+    }[];
   };
 }
 

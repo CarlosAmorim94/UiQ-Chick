@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
 import { GetStaticProps } from "next/types";
 import { useState } from "react";
 import Cards from "../../components/Cards";
@@ -12,20 +10,7 @@ type PostsProps = {
 };
 
 export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
-  
-
-  const formattedPosts = postsPagination.results.map((post) => ({
-    ...post,
-    first_publication_date: format(
-      new Date(post.first_publication_date!),
-      "dd MMM yyyy",
-      {
-        locale: ptBR,
-      }
-    ),
-  }));
-
-  const [posts, setPosts] = useState<Post[]>(formattedPosts);
+  const [posts, setPosts] = useState(postsPagination.results);
   const [nextPage, setNextPage] = useState(postsPagination.next_page);
 
   async function handleNextPage(): Promise<void> {
@@ -40,13 +25,6 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
     const newPosts = postsResults.results.map((post: Post) => {
       return {
         ...post,
-        first_publication_date: format(
-          new Date(post.first_publication_date!),
-          "dd MMM yyyy",
-          {
-            locale: ptBR,
-          }
-        ),
       };
     });
 
