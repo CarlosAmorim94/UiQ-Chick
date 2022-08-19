@@ -8,7 +8,7 @@ export interface Post {
     banner: {
       url?: string;
       alt: string;
-    }
+    };
   };
 }
 

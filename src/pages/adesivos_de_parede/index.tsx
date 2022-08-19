@@ -2,31 +2,22 @@ import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { GetStaticProps } from "next/types";
 import { useState } from "react";
+import Cards from "../../components/Cards";
 import { getPrismicClient } from "../../services/prismic";
 import { Post, PostPagination } from "../../types/post/posts";
-import {
-  ButtonDetail,
-  Buttons,
-  Cards,
-  CardsContainer,
-  Container,
-  Content,
-  ItemPrice,
-  ItemTitle,
-} from "./styles";
-import Image from "next/image";
-import Link from "next/link";
-import { BsBagPlusFill } from "react-icons/bs";
+import { CardsContainer, Container, Content } from "./styles";
 
-interface PostsProps {
+type PostsProps = {
   postsPagination: PostPagination;
-}
+};
 
 export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
+  
+
   const formattedPosts = postsPagination.results.map((post) => ({
     ...post,
     first_publication_date: format(
-      new Date(post.first_publication_date),
+      new Date(post.first_publication_date!),
       "dd MMM yyyy",
       {
         locale: ptBR,
@@ -50,7 +41,7 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
       return {
         ...post,
         first_publication_date: format(
-          new Date(post.first_publication_date),
+          new Date(post.first_publication_date!),
           "dd MMM yyyy",
           {
             locale: ptBR,
@@ -66,35 +57,8 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
     <Container>
       <Content>
         <CardsContainer>
-          {posts.map((item, index) => (
-            <Cards key={index}>
-              <Image
-                className="items-image"
-                src={item.data.banner.url}
-                alt={item.data.banner.alt}
-                width={500}
-                height={500}
-                layout="responsive"
-              />
-
-              <ItemPrice>
-                <div className="price">{item.data.price}</div>
-                <div className="split-price">
-                  ou em 10x de {item.data.price / 10} sem juros
-                </div>
-                <div className="free-shipping">Frete grátis</div>
-              </ItemPrice>
-
-              <ItemTitle>{item.data.title}</ItemTitle>
-
-              <Buttons>
-                <Link href="/">
-                  <ButtonDetail>Mais detalhes</ButtonDetail>
-                </Link>
-
-                <BsBagPlusFill className="plus_cart" onClick={() => {}} />
-              </Buttons>
-            </Cards>
+          {posts.map((item) => (
+            <Cards key={item.uid} item={item} />
           ))}
         </CardsContainer>
 

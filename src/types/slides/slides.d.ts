@@ -6,7 +6,7 @@ interface Slide {
     banner: {
       alt: string;
       url: string;
-    }
+    };
   };
 }
 
