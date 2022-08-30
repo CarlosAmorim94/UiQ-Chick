@@ -5,7 +5,7 @@ export const Container = styled.li`
   width: 20%;
   height: 100%;
   padding: 0.5rem;
-  border-right: 1px solid #fff;
+  border-right: 1px solid ${({ theme }) => theme.colors.category_text};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ export const Container = styled.li`
   cursor: pointer;
 
   :first-child {
-    border-left: 1px solid #fff;
+    border-left: 1px solid ${({ theme }) => theme.colors.category_text};
   }
 
   :hover {
@@ -23,7 +23,7 @@ export const Container = styled.li`
 
 export const Icon = styled.div`
   font-size: 2rem;
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.category_text};
 `;
 
 export const Name = styled.div`
@@ -32,5 +32,5 @@ export const Name = styled.div`
   flex-wrap: wrap;
   text-align: center;
   font-size: 1rem;
-  color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.category_text};
 `;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Logo2 from "/public/img/Logo2.png";
+import Logo2 from "/public/img/logo2.png";
 import { FaShoppingBag } from "react-icons/fa";
 import { GiBrickWall, GiBoxUnpacking, GiRolledCloth } from "react-icons/gi";
 import { AiFillGift } from "react-icons/ai";
