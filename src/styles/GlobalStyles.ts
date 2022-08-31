@@ -22,4 +22,8 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    .mySwiper {
+        user-select: none;
+    }
+
 `;

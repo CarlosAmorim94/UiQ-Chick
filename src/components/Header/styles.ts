@@ -26,6 +26,39 @@ export const LogoContainer = styled.div`
   }
 `;
 
+export const SearchBox = styled.form`
+  width: 50%;
+  background-color: ${(props) => props.theme.colors.category_text};
+  border-radius: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 20px;
+
+  input {
+    height: 29px;
+    border: none;
+    background: none;
+    padding: 4px 5px;
+    font-size: 1rem;
+    width: 100%;
+
+    &:focus {
+      outline: 0 none;
+      box-shadow: 0 0 0 transparent;
+    }
+  }
+
+  button {
+    background: none;
+    font-size: 1.5rem;
+    color: ${(props) => props.theme.colors.primary};
+    border: none;
+    padding: 3px 8px;
+  }
+`;
+
 export const Navbar = styled.div`
   width: auto;
   display: flex;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo2 from "/public/img/logo2.png";
 import { FaShoppingBag } from "react-icons/fa";
 import { GiBrickWall, GiBoxUnpacking, GiRolledCloth } from "react-icons/gi";
-import { AiFillGift } from "react-icons/ai";
+import { AiFillGift, AiOutlineSearch } from "react-icons/ai";
 import { MdStickyNote2 } from "react-icons/md";
 
 import Switch from "react-switch";
@@ -15,6 +15,7 @@ import {
   Info,
   LogoContainer,
   Navbar,
+  SearchBox,
 } from "./styles";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
@@ -41,6 +42,13 @@ export const Header = ({ toggleTheme }: Props) => {
               </LogoContainer>
             </a>
           </Link>
+
+          <SearchBox>
+            <input type="text" placeholder="Buscar..." />
+            <button type="submit">
+              <AiOutlineSearch />
+            </button>
+          </SearchBox>
 
           <Navbar>
             <Switch

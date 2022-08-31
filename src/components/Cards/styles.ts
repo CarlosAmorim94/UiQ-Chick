@@ -19,7 +19,7 @@ export const Container = styled.article`
 
 export const ImageContent = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: white;
   border-radius: 1rem 1rem 0 0;
 `;
 
