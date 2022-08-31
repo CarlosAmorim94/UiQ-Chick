@@ -20,5 +20,13 @@ export const LoadButton = styled.button`
   width: 50%;
   height: 3rem;
   margin: 2rem auto;
+  border: none;
   border-radius: 3rem;
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.category_text};
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
 `;

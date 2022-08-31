@@ -1,48 +1,55 @@
 import styled from "styled-components";
 
-export const Container = styled.li`
+export const Container = styled.article`
   list-style: none;
-  border: 1px solid red;
+  border: 1px dashed ${({ theme }) => theme.colors.secondary};
   border-radius: 1rem;
-  padding: 1rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all ease 0.3s;
+  color: ${({ theme }) => theme.colors.text};
 
   &:hover {
-    box-shadow: 5px 5px 5px gray;
     transform: translateY(-5px);
+    border: 1px solid ${({ theme }) => theme.colors.primary};
   }
 `;
-export const ItemTitle = styled.div`
+
+export const ImageContent = styled.div`
   width: 100%;
+  background-color: ${({ theme }) => theme.colors.background};
+  border-radius: 1rem 1rem 0 0;
+`;
+
+export const ItemTitle = styled.h3`
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
   text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin: auto;
+  margin: 0.5rem auto;
 `;
-export const ItemPrice = styled.div`
+export const ItemPrice = styled.section`
   width: 100%;
   margin: auto;
-
-  .price {
-    font-size: 1.5rem;
-    color: black;
-    font-weight: bold;
-  }
-  .split-price {
-    font-size: 0.7rem;
-    color: black;
-    font-weight: bold;
-  }
-  .free-shipping {
-    font-size: 0.7rem;
-    color: green;
-    font-weight: bold;
-  }
+  padding: 0 1rem;
+`;
+export const Price = styled.p`
+  font-size: 1.5rem;
+  font-weight: bold;
+`;
+export const SplitPrice = styled.p`
+  font-size: 0.7rem;
+  font-weight: bold;
+`;
+export const FreeShipping = styled.p`
+  font-size: 0.7rem;
+  color: green;
+  font-weight: bold;
 `;
 
 export const Buttons = styled.div`
@@ -50,32 +57,34 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
 
   .plus_cart {
     font-size: 2.5rem;
-    color: #ff4742;
+    color: ${({ theme }) => theme.colors.secondary};
     margin: auto;
     cursor: pointer;
     &:hover {
-      color: green;
+      color: ${({ theme }) => theme.colors.primary};
     }
   }
 `;
 
 export const ButtonDetail = styled.button`
   width: 75%;
-  background: #ff4742;
-  border: 1px solid #ff4742;
+  background: ${({ theme }) => theme.colors.secondary};
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
   border-radius: 20px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
-  font-weight: 800;
   min-width: fit-content;
   padding: 5px 30px;
   user-select: none;
   &:hover,
   &:active {
-    background-color: initial;
-    color: #ff4742;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.background};
   }
 `;
