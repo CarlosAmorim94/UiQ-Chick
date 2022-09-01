@@ -9,9 +9,14 @@ import { getPrismicClient } from "../../services/prismic";
 import { ParsedUrlQuery } from "querystring";
 
 import {
+  AddToCart,
   Container,
   Content,
+  Description,
   ImageStyle,
+  Price,
+  ProductColors,
+  ProductSize,
   Title,
 } from "../../styles/pageStyles/stylesSlug";
 import Image from "next/image";
@@ -33,6 +38,10 @@ export default function Slug({ post }: CardProps) {
 
   return (
     <Container>
+      <Head>
+        <title>{post.data.title}</title>
+      </Head>
+
       <Title>{post.data.title}</Title>
       <Content>
         <ImageStyle>
@@ -45,6 +54,31 @@ export default function Slug({ post }: CardProps) {
             height={100}
           />
         </ImageStyle>
+
+        <ProductColors>Colors</ProductColors>
+
+        <ProductSize>Size</ProductSize>
+
+        <Price>
+          {post.data.price.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </Price>
+
+        <AddToCart>Comprar</AddToCart>
+
+        <Description>
+          {post.data.content?.map((item) => (
+            <article key={item.heading}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: RichText.asHtml(item.body),
+                }}
+              />
+            </article>
+          ))}
+        </Description>
       </Content>
     </Container>
   );

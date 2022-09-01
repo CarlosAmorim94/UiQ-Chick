@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Head from "next/head";
 
 interface SliderProps {
   sliderResults: Slider;
@@ -19,6 +20,9 @@ interface SliderProps {
 export default function Home({ sliderResults }: SliderProps) {
   return (
     <>
+      <Head>
+        <title>UiQ chick!</title>
+      </Head>
       <Swiper
         rewind={true}
         slidesPerView={1}

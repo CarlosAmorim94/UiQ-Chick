@@ -9,6 +9,7 @@ import {
   Content,
   LoadButton,
 } from "../../styles/pageStyles/styles";
+import Head from "next/head";
 
 type PostsProps = {
   postsPagination: PostPagination;
@@ -38,6 +39,9 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
 
   return (
     <Container>
+      <Head>
+        <title>Quadros em Tecido Sublimado</title>
+      </Head>
       <Content>
         <CardsContainer>
           {posts.map((item) => (
