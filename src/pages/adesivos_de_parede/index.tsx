@@ -8,7 +8,7 @@ import {
   Container,
   Content,
   LoadButton,
-} from "./styles/styles";
+} from "../../styles/pageStyles/styles";
 
 type PostsProps = {
   postsPagination: PostPagination;

@@ -8,7 +8,13 @@ import { Post } from "../../types/post/posts";
 import { getPrismicClient } from "../../services/prismic";
 import { ParsedUrlQuery } from "querystring";
 
-import {} from "./styles/stylesSlug";
+import {
+  Container,
+  Content,
+  ImageStyle,
+  Title,
+} from "../../styles/pageStyles/stylesSlug";
+import Image from "next/image";
 
 type CardProps = {
   post: Post;
@@ -26,10 +32,21 @@ export default function Slug({ post }: CardProps) {
   }
 
   return (
-    <>
-      <h2>{post.data.title}</h2>
-      <h3>{post.data.price}</h3>
-    </>
+    <Container>
+      <Title>{post.data.title}</Title>
+      <Content>
+        <ImageStyle>
+          <Image
+            src={post.data.banner.url!}
+            alt={post.data.banner.alt}
+            priority
+            layout="responsive"
+            width={100}
+            height={100}
+          />
+        </ImageStyle>
+      </Content>
+    </Container>
   );
 }
 

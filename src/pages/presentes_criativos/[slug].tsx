@@ -8,7 +8,7 @@ import { Post } from "../../types/post/posts";
 import { getPrismicClient } from "../../services/prismic";
 import { ParsedUrlQuery } from "querystring";
 
-import {} from "./styles/stylesSlug";
+import {} from "../../styles/pageStyles/stylesSlug";
 
 type CardProps = {
   post: Post;

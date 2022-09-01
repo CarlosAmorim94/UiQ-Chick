@@ -3,7 +3,12 @@ import { useState } from "react";
 import Cards from "../../components/Cards";
 import { getPrismicClient } from "../../services/prismic";
 import { Post, PostPagination } from "../../types/post/posts";
-import { CardsContainer, Container, Content } from "./styles/styles";
+import {
+  CardsContainer,
+  Container,
+  Content,
+  LoadButton,
+} from "../../styles/pageStyles/styles";
 
 type PostsProps = {
   postsPagination: PostPagination;
@@ -41,9 +46,7 @@ export default function Adesivos_de_parede({ postsPagination }: PostsProps) {
         </CardsContainer>
 
         {nextPage && (
-          <button type="button" onClick={handleNextPage}>
-            Carregar mais posts
-          </button>
+          <LoadButton onClick={handleNextPage}>Mais produtos...</LoadButton>
         )}
       </Content>
     </Container>

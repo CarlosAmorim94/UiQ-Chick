@@ -56,16 +56,6 @@ export default function Home({ sliderResults }: SliderProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient({});
-
-  /* const postsResponse = await prismic.getByType(process.env.PRISMIC_API_CATEGORY_1 as string, {
-    orderings: {
-      field: 'last_publication_date',
-      direction: 'desc',
-    },
-  });
-
-  const postsPagination = {
-    results: postsResponse.results, */
   const slider = await prismic.getByType(
     process.env.PRISMIC_API_SLIDER as string,
     {
