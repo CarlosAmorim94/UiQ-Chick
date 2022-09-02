@@ -12,9 +12,12 @@ import {
   AddToCart,
   Container,
   Content,
+  CurrentPrice,
   Description,
+  DividedPrice,
   ImageStyle,
   Price,
+  PriceBefore,
   ProductColors,
   ProductSize,
   Title,
@@ -30,6 +33,8 @@ type IParams = ParsedUrlQuery & {
 };
 
 export default function Slug({ post }: CardProps) {
+  const parcelas: number = 10;
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -57,13 +62,40 @@ export default function Slug({ post }: CardProps) {
 
         <ProductColors>Colors</ProductColors>
 
-        <ProductSize>Size</ProductSize>
+        <ProductSize>
+          <input type="radio" id="little" name="contact" value="email" />
+          <label htmlFor="little">Pequeno</label>
+
+          <input type="radio" id="middle" name="contact" value="phone" />
+          <label htmlFor="middle">Médio</label>
+
+          <input type="radio" id="big" name="contact" value="mail" />
+          <label htmlFor="big">Grande</label>
+        </ProductSize>
 
         <Price>
-          {post.data.price.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          })}
+          <PriceBefore>
+            {(post.data.price * 1.5).toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </PriceBefore>
+          <CurrentPrice>
+            {post.data.price.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </CurrentPrice>
+          <DividedPrice>
+            Ou em ${parcelas} vezes de
+            <span>
+              {(post.data.price / parcelas).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
+            sem juros!
+          </DividedPrice>
         </Price>
 
         <AddToCart>Comprar</AddToCart>

@@ -5,7 +5,9 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: Roboto, sans-serif;        
+        font-family: Roboto, sans-serif;
+        transition: all ease .5s;
+        text-decoration: none;
     }
     
     html {
@@ -14,14 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
     
-    a {
-        text-decoration: none;
-        
-        &:visited {
-            text-decoration: none;
-        }
-    }
-
     .mySwiper {
         user-select: none;
     }

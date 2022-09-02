@@ -21,7 +21,7 @@ export default function Home({ sliderResults }: SliderProps) {
   return (
     <>
       <Head>
-        <title>UiQ chick!</title>
+        <title>UiQ Chick!</title>
       </Head>
       <Swiper
         rewind={true}
