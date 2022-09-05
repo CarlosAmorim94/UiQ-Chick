@@ -35,34 +35,32 @@
         }
       },
       "price": {
-        "type": "Number",
-        "config": {
-          "label": "Price",
-          "placeholder": "Preço"
-        }
-      },
-      "content": {
         "type": "Group",
         "config": {
-          "label": "Content",
+          "label": "Price",
           "fields": {
-            "heading": {
-              "type": "Text",
+            "price": {
+              "type": "Number",
               "config": {
-                "label": "Heading",
-                "placeholder": "Cabeçalho"
+                "label": "Price",
+                "placeholder": "Preço"
               }
             },
-            "body": {
-              "type": "StructuredText",
+            "size": {
+              "type": "Text",
               "config": {
-                "label": "Body",
-                "placeholder": "Descrição",
-                "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                "label": "Size",
+                "placeholder": "Tamanho ( 90 x 1.30 ) "
               }
             }
           }
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "Description",
+          "placeholder": ""
         }
       }
     }

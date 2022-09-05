@@ -15,7 +15,7 @@ import {
   SplitPrice,
 } from "./styles";
 
-type Props = IntrinsicAttributes & {
+type Props = {
   key: string;
   item: Post;
 };
@@ -41,14 +41,14 @@ export default function Cards({ item }: Props) {
 
       <ItemPrice>
         <Price>
-          {item.data.price.toLocaleString("pt-br", {
+          {item.data.price[0].price.toLocaleString("pt-br", {
             style: "currency",
             currency: "BRL",
           })}
         </Price>
         <SplitPrice>
           ou em 10x de{" "}
-          {(item.data.price / 10).toLocaleString("pt-br", {
+          {(item.data.price[0].price / 10).toLocaleString("pt-br", {
             style: "currency",
             currency: "BRL",
           })}{" "}

@@ -8,7 +8,21 @@ import { Post } from "../../types/post/posts";
 import { getPrismicClient } from "../../services/prismic";
 import { ParsedUrlQuery } from "querystring";
 
-import {} from "../../styles/pageStyles/stylesSlug";
+import {
+  AddToCart,
+  Container,
+  Content,
+  CurrentPrice,
+  Description,
+  DividedPrice,
+  ImageStyle,
+  Price,
+  PriceBefore,
+  ProductColors,
+  ProductSize,
+  Title,
+} from "../../styles/pageStyles/stylesSlug";
+import Image from "next/image";
 
 type CardProps = {
   post: Post;
@@ -19,6 +33,8 @@ type IParams = ParsedUrlQuery & {
 };
 
 export default function Slug({ post }: CardProps) {
+  const parcelas: number = 10;
+
   const router = useRouter();
 
   if (router.isFallback) {
@@ -26,10 +42,77 @@ export default function Slug({ post }: CardProps) {
   }
 
   return (
-    <>
-      <h2>{post.data.title}</h2>
-      <h3>{post.data.price}</h3>
-    </>
+    <Container>
+      <Head>
+        <title>{post.data.title}</title>
+      </Head>
+
+      <Title>{post.data.title}</Title>
+      <Content>
+        <ImageStyle>
+          <Image
+            src={post.data.banner.url!}
+            alt={post.data.banner.alt}
+            priority
+            layout="responsive"
+            width={100}
+            height={100}
+          />
+        </ImageStyle>
+
+        <ProductColors>Colors</ProductColors>
+
+        <ProductSize>
+          <input type="radio" id="little" name="contact" value="email" />
+          <label htmlFor="little">Pequeno</label>
+
+          <input type="radio" id="middle" name="contact" value="phone" />
+          <label htmlFor="middle">Médio</label>
+
+          <input type="radio" id="big" name="contact" value="mail" />
+          <label htmlFor="big">Grande</label>
+        </ProductSize>
+
+        <Price>
+          <PriceBefore>
+            {(post.data.price * 1.5).toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </PriceBefore>
+          <CurrentPrice>
+            {post.data.price.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </CurrentPrice>
+          <DividedPrice>
+            Ou em ${parcelas} vezes de
+            <span>
+              {(post.data.price / parcelas).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
+            sem juros!
+          </DividedPrice>
+        </Price>
+
+        <AddToCart>Comprar</AddToCart>
+
+        <Description>
+          {post.data.content?.map((item) => (
+            <article key={item.heading}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: RichText.asHtml(item.body),
+                }}
+              />
+            </article>
+          ))}
+        </Description>
+      </Content>
+    </Container>
   );
 }
 

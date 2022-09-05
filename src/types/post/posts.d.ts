@@ -4,17 +4,15 @@ export interface Post {
   data: {
     title: string;
     author: string;
-    price: number;
     banner: {
       url?: string;
       alt: string;
     };
-    content?: {
-      heading: string;
-      body: {
-        text: string;
-      }[];
+    price: {
+      price: number;
+      size: string;
     }[];
+    description: string;
   };
 }
 

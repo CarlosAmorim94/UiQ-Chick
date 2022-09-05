@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.article`
   list-style: none;
   border: 1px dashed ${({ theme }) => theme.colors.secondary};
-  border-radius: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

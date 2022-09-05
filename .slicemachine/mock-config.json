@@ -27,14 +27,7 @@
       }
     },
     "quadros_sublimados": {
-      "content": {
-        "body": {
-          "config": {
-            "patternType": "PARAGRAPH",
-            "blocks": 1
-          }
-        }
-      }
+      "price": {}
     },
     "embalagens_criativas": {
       "content": {
